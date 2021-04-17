@@ -62,8 +62,7 @@ max_contour = contour_info[0]
 # -- Create empty mask, draw filled polygon on it corresponding to largest contour ----
 # Mask is black, polygon is white
 mask = np.zeros(edges.shape)
-for c in contour_info:
-    cv2.fillConvexPoly(mask, c[0], (255))
+cv2.fillConvexPoly(mask, max_contour[0], (255))
 
 # -- Smooth mask, then blur it
 mask = cv2.dilate(mask, None, iterations=MASK_DILATE_ITER)
