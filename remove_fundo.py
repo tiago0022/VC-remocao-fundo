@@ -80,7 +80,7 @@ rgba = cv2.cvtColor(masked, cv2.COLOR_RGB2BGRA)
 
 for i in range(len(rgba)):
     for j in range(len(rgba[0])):
-        if (rgba[i][j] == [0, 0, 255, 255]).all():
+        if (rgba[i][j] == [255, 255, 255, 255]).all():
             rgba[i][j] = [0, 0, 0, 0]
 
 exibe(rgba, 'Resultado')
